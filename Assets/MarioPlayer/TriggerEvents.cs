@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class TriggerEvents : MonoBehaviour
 {
-    
-
     void Start()
     {
         
@@ -25,6 +23,32 @@ public class TriggerEvents : MonoBehaviour
         if (other.tag == "Mushroom")
         {
             transform.localScale = new Vector3(2, 2, 2);
+            this.tag = "MarioMushroom";
+        }
+
+
+        // STAR: 
+        // *** if mario hit star, become invincible and yellow.
+        if (other.tag == "Star")
+        {
+            GetComponent<MeshRenderer>().material.color = Color.yellow; //later with animation we would like to switch color fast
+            this.tag = "MarioStar";
+        }
+
+        // ENEMY: 
+        // *** if mario hit enemy, die.
+        if (other.tag == "Enemy")
+        {
+            if (this.tag == "Player")
+            {
+                Destroy(this.gameObject);
+            }
+
+            if (this.tag == "MarioMushroom")
+            {
+                transform.localScale = new Vector3(1, 1, 1);
+                this.tag = "Player";
+            }
         }
     }
 }
