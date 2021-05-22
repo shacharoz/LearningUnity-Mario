@@ -11,9 +11,11 @@ public class TriggerEventsMusroom : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" || other.tag == "MarioStar" || other.tag == "MarioMushroom")
         {
+            //do something
             Destroy(this.gameObject);
         }
     }
+
 }

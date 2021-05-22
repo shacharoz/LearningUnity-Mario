@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TriggerEvents : MonoBehaviour
 {
+
+    public UnityEvent OnPlayerDie;
+
+
     void Start()
     {
         
@@ -41,7 +46,9 @@ public class TriggerEvents : MonoBehaviour
         {
             if (this.tag == "Player")
             {
-                Destroy(this.gameObject);
+                //Destroy(this.gameObject);
+
+                OnPlayerDie.Invoke();
             }
 
             if (this.tag == "MarioMushroom")

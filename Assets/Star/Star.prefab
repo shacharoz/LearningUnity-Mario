@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1984908003378773571}
   - component: {fileID: 1984908003378773568}
   - component: {fileID: 1984908003378773569}
-  - component: {fileID: 1278125800}
+  - component: {fileID: 1823355619016318469}
   m_Layer: 0
   m_Name: Star
   m_TagString: Star
@@ -94,7 +94,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1278125800
+--- !u!114 &1823355619016318469
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,6 +103,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1984908003378773574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 100ad10b00683724ca39ad9721e12a34, type: 3}
+  m_Script: {fileID: 11500000, guid: 0666e3d7246a2694ca6c9f0b875ac478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TagName: Mario
+  OnHitTarget:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1984908003378773574}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

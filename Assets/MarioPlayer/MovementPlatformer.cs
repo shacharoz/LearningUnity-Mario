@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MovementPlatformer : MonoBehaviour
 {
@@ -10,13 +8,16 @@ public class MovementPlatformer : MonoBehaviour
     public KeyCode UpKey = KeyCode.W;
 
     public float Speed = 1;
+    public float JumpSpeed = 3;
 
     public Vector3 StartpointPosition;
 
+    private bool isOnGround;
 
     void Start()
     {
         StartpointPosition = transform.position;
+        isOnGround = false;
     }
 
     
@@ -32,11 +33,22 @@ public class MovementPlatformer : MonoBehaviour
             transform.Translate(Vector3.right * Time.deltaTime * Speed);
         }
 
-        if (Input.GetKeyDown(UpKey))
+        if (Input.GetKeyDown(UpKey) && isOnGround == true)
         {
             //MAKE JUMP
             Debug.Log("jump");
-        }
+            //GetComponent<Rigidbody>().velocity = Vector3.up * JumpSpeed;
+            GetComponent<Rigidbody>().AddForce(Vector3.up * JumpSpeed, ForceMode.Impulse);
 
+            isOnGround = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Floor")
+        {
+            isOnGround = true;
+        }
     }
 }

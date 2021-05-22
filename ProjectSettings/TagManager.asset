@@ -10,6 +10,8 @@ TagManager:
   - MarioStar
   - Enemy
   - MarioMushroom
+  - Mario
+  - Floor
   layers:
   - Default
   - TransparentFX

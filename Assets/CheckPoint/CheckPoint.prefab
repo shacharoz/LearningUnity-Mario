@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7801524059601832716}
   - component: {fileID: 7801524059601832719}
   - component: {fileID: 7801524059601832718}
-  - component: {fileID: 7801524059601832714}
+  - component: {fileID: 136246751}
   m_Layer: 0
   m_Name: CheckPoint
   m_TagString: Checkpoint
@@ -94,7 +94,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7801524059601832714
+--- !u!114 &136246751
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,6 +103,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 7801524059601832705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36f1658cd4fb6c74292bd1c8eb5c2891, type: 3}
+  m_Script: {fileID: 11500000, guid: 0666e3d7246a2694ca6c9f0b875ac478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TagName: Mario
+  OnHitTarget:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7801524059601832719}
+        m_MethodName: set_material
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 57ab1fb527516e44aa1b2039bfad875a,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
