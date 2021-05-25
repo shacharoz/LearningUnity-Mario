@@ -44,7 +44,7 @@ public class TriggerEvents : MonoBehaviour
         // *** if mario hit enemy, die.
         if (other.tag == "Enemy")
         {
-            if (this.tag == "Player")
+            if (this.tag == "Mario")
             {
                 //Destroy(this.gameObject);
 
@@ -54,7 +54,7 @@ public class TriggerEvents : MonoBehaviour
             if (this.tag == "MarioMushroom")
             {
                 transform.localScale = new Vector3(1, 1, 1);
-                this.tag = "Player";
+                this.tag = "Mario";
             }
         }
     }
