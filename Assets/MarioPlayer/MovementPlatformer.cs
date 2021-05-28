@@ -2,7 +2,6 @@
 
 public class MovementPlatformer : MonoBehaviour
 {
-
     public KeyCode LeftKey = KeyCode.A;
     public KeyCode RightKey = KeyCode.D;
     public KeyCode UpKey = KeyCode.W;
@@ -10,13 +9,16 @@ public class MovementPlatformer : MonoBehaviour
     public float Speed = 1;
     public float JumpSpeed = 3;
 
-    public Vector3 StartpointPosition;
+
+    internal Vector3 StartpointPosition;
 
     private bool isOnGround;
 
     void Start()
     {
+        //on strat save the original position of the player in the stage
         StartpointPosition = transform.position;
+
         isOnGround = false;
     }
 
@@ -50,5 +52,10 @@ public class MovementPlatformer : MonoBehaviour
         {
             isOnGround = true;
         }
+    }
+
+    public void ResetPositionToLastSavedCheckpoint()
+    {
+        transform.position = StartpointPosition;
     }
 }

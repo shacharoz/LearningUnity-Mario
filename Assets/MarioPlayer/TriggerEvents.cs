@@ -1,17 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class TriggerEvents : MonoBehaviour
 {
-
     public UnityEvent OnPlayerDie;
-
+    
+    private MovementPlatformer movementScriptOfMario;
 
     void Start()
     {
-        
+        movementScriptOfMario = GetComponent<MovementPlatformer>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -20,7 +18,18 @@ public class TriggerEvents : MonoBehaviour
         // *** if mario hit checkpoint, save position of checkpoint in mario next starting position.
         if (other.tag == "Checkpoint")
         {
-            this.GetComponent<MovementPlatformer>().StartpointPosition = other.GetComponent<Transform>().position;
+            movementScriptOfMario.StartpointPosition = other.gameObject.transform.position;
+            //GetComponent<MovementPlatformer>().StartpointPosition = other.gameObject.transform.position;
+
+            /*
+            startpointPosition = Position of the checkpoint;
+
+            other.gameObject == checkpoint
+            other.gameObject.transform.position == Position of the checkpoint
+
+            this == player
+
+*/          
         }
 
         // MUSHROOM: 
@@ -49,6 +58,8 @@ public class TriggerEvents : MonoBehaviour
                 //Destroy(this.gameObject);
 
                 OnPlayerDie.Invoke();
+
+                //transform.position = movementScriptOfMario.StartpointPosition;
             }
 
             if (this.tag == "MarioMushroom")
