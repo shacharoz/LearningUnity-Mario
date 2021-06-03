@@ -4,7 +4,9 @@ using UnityEngine.Events;
 public class TriggerEvents : MonoBehaviour
 {
     public UnityEvent OnPlayerDie;
-    
+
+    public UnityEvent OnTakeCoin;
+
     private MovementPlatformer movementScriptOfMario;
 
     void Start()
@@ -28,7 +30,6 @@ public class TriggerEvents : MonoBehaviour
             other.gameObject.transform.position == Position of the checkpoint
 
             this == player
-
 */          
         }
 
@@ -39,7 +40,6 @@ public class TriggerEvents : MonoBehaviour
             transform.localScale = new Vector3(2, 2, 2);
             this.tag = "MarioMushroom";
         }
-
 
         // STAR: 
         // *** if mario hit star, become invincible and yellow.
@@ -67,6 +67,12 @@ public class TriggerEvents : MonoBehaviour
                 transform.localScale = new Vector3(1, 1, 1);
                 this.tag = "Mario";
             }
+        }
+
+        //COIN
+        if (other.tag == "Coin")
+        {
+            OnTakeCoin.Invoke();
         }
     }
 }
