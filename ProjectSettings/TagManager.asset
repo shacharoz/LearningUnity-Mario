@@ -13,6 +13,7 @@ TagManager:
   - Mario
   - Floor
   - Coin
+  - BoxWithMushroom
   layers:
   - Default
   - TransparentFX

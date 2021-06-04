@@ -8,13 +8,17 @@ public class ScoreManager : MonoBehaviour
     public int BaseScoreFactor = 100;
 
     public Text TotalScoreTextfield;
-    public Text CoinCollectedTextfield;
+    //public Text CoinCollectedTextfield;
 
     void Start()
     {
         
     }
 
+    /// <summary>
+    /// happens every time the player collects a coin.
+    /// add score to the total score
+    /// </summary>
     public void IncreaseCoin()
     {
         CoinCounter++;
