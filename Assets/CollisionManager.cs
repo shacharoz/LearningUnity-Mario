@@ -6,6 +6,7 @@ public class CollisionManager : MonoBehaviour
     public string TagName;
 
     public UnityEvent OnHitTarget;
+
     void Start()
     {
         
