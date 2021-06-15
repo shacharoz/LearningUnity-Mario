@@ -33,9 +33,17 @@ public class BlocksController : MonoBehaviour
         //top
         foreach (Transform t in Blocks)
         {
-            if (Mathf.RoundToInt( t.localPosition.y) == 1)
+            if (Mathf.RoundToInt(t.localPosition.y) == 1)
             {
-                t.parent = TopParent;
+                t.SetParent(TopParent);
+            }
+            if (Mathf.RoundToInt(t.localPosition.y) == 0)
+            {
+                //t.SetParent(TopParent);
+            }
+            if (Mathf.RoundToInt(t.localPosition.y) == -1)
+            {
+                //t.SetParent(TopParent);
             }
         }
     }
@@ -47,7 +55,15 @@ public class BlocksController : MonoBehaviour
         {
             if (Mathf.RoundToInt(t.localPosition.x) == 1)
             {
-                t.parent = LeftParent;
+                t.SetParent(LeftParent);
+            }
+            if (Mathf.RoundToInt(t.localPosition.x) == 0)
+            {
+               // t.SetParent(LeftParent); //center
+            }
+            if (Mathf.RoundToInt(t.localPosition.x) == -1)
+            {
+                //t.SetParent(LeftParent); //right
             }
         }
     }
