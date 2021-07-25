@@ -1976,7 +1976,6 @@ MonoBehaviour:
   FireKey: 32
   BulletPrefab: {fileID: 6873283251117850862, guid: 0bf499760bf110642afe977ddf2f6ef8,
     type: 3}
-  TimeGapBetweenAutomaticFire: 30
 --- !u!1 &1221676518
 GameObject:
   m_ObjectHideFlags: 0
